@@ -3,11 +3,12 @@ account_numbers = list(range(10000000,100000000))
 
 class BankAccount:
     routing_number = 123456789
-    def __init__(self, full_name, account_number):
+    def __init__(self, full_name):
         self.full_name = full_name
         random.shuffle(account_numbers)
         self.account_number = account_numbers.pop(len(account_number))
         self.balance = 0
+
 
 
     def deposit(self, amount):
@@ -48,14 +49,16 @@ class BankAccount:
         print ('{} {} {}'.format(self.full_name, self.account_number, self.balance))
         
  
-account = BankAccount("andreaGraziosi", 200)
+account = BankAccount("andreaGraziosi",)
 account.deposit(35)
 account.withdraw(400)
 account.balance()
 
-account2 = BankAccount("leaSmith",300)
+account2 = BankAccount("leaSmith")
+account2.deposit(600)
 account2.balance()
 account2.add_interest()
 
-account3 = BankAccount("Thais DaSilva", 45)
+account3 = BankAccount("Thais DaSilva")
+account3.deposit(2000)
 account3.print_receipt()
