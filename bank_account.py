@@ -50,9 +50,12 @@ class BankAccount:
  
 account = BankAccount("andreaGraziosi", 200)
 account.deposit(35)
-account.withdraw(15)
+account.withdraw(400)
 account.balance()
 
 account2 = BankAccount("leaSmith",300)
+account2.balance()
+account2.add_interest()
+
 account3 = BankAccount("Thais DaSilva", 45)
-print(account.print_receipt())
+account3.print_receipt()
