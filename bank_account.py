@@ -1,5 +1,6 @@
 import random
 account_number = list(range(10000000,100000000))
+print("account lists are made")
 random.shuffle(account_number)
 
 class BankAccount:
@@ -46,8 +47,8 @@ class BankAccount:
         
     def print_receipt(self):
         """print the receipt with Full Name, Accountnumber routing number and Balance"""
-        print ('{}/n Account No.:{}/n Routing No.:{}/n Balance:{}'.format(self.full_name, self.account_number, self.routing_number, self.balance))
-        #print (f'{self.full_name} /n Account No.:{')
+        print ('{}\n Account No.:{}\n Routing No.:{}\n Balance:{}'.format(self.full_name, self.account_number, self.routing_number, self.balance))
+        
 print("account list made")
 account = BankAccount("andreaGraziosi")
 print(account.account_number)
