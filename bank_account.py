@@ -1,12 +1,12 @@
 import random
-account_numbers = list(range(10000000,100000000))
+account_number = list(range(10000000,100000000))
+random.shuffle(account_number)
 
 class BankAccount:
     routing_number = 123456789
     def __init__(self, full_name):
         self.full_name = full_name
-        random.shuffle(account_numbers)
-        self.account_number = account_numbers.pop(len(account_number))
+        self.account_number = account_number.pop(len(account_number)-1)
         self.balance = 0
 
 
@@ -46,19 +46,27 @@ class BankAccount:
         
     def print_receipt(self):
         """print the receipt with Full Name, Accountnumber routing number and Balance"""
-        print ('{} {} {}'.format(self.full_name, self.account_number, self.balance))
-        
- 
-account = BankAccount("andreaGraziosi",)
-account.deposit(35)
-account.withdraw(400)
-account.balance()
-
+        print ('{}/n Account No.:{}/n Routing No.:{}/n Balance:{}'.format(self.full_name, self.account_number, self.routing_number, self.balance))
+        #print (f'{self.full_name} /n Account No.:{')
+print("account list made")
+account = BankAccount("andreaGraziosi")
+print(account.account_number)
+account.deposit(55)
+account.withdraw(5)
+account.get_balance()
+account.add_interest()
+account.print_receipt()
+print("---------------------------")
 account2 = BankAccount("leaSmith")
 account2.deposit(600)
-account2.balance()
+account2.withdraw(300)
+account2.get_balance()
 account2.add_interest()
-
+account2.print_receipt()
+print("---------------------------")
 account3 = BankAccount("Thais DaSilva")
-account3.deposit(2000)
+account3.deposit(200)
+account3.withdraw(400)
+account3.get_balance()
+account3.add_interest()
 account3.print_receipt()
